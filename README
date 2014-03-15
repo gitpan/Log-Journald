@@ -28,6 +28,10 @@ DESCRIPTION
     capabilities and includes location of the logging point in the source
     code in the messages.
 
+    Backends for Log::Dispatch and Log::Log4perl exist: Use
+    Log::Dispatch::Journald and Log::Log4perl::Appender::Journald
+    respectively.
+
 SUBROUTINES
     journal_log PRIORITY MESSAGE
         Log a message at given priority. Exported by default.
@@ -53,9 +57,13 @@ SEE ALSO
     *   Sys::Syslog -- Traditiona logging mechanism. The module provides
         useful macros.
 
-    *   sd-journal(3) - Description of C language API for journal.
+    *   sd-journal(3) -- Description of C language API for journal.
 
     *   systemd-journald.service(8) -- Manual of the journal service.
+
+    *   Log::Dispatch::Journald -- Log::Dispatch backend.
+
+    *   Log::Log4perl::Appender::Journald -- Log::Log4perl appender.
 
 BUGS
     "journal_log()" terminates the message at a NUL byte. You need to use

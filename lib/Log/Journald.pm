@@ -31,6 +31,10 @@ possible to easily use L<systemd-journald.service(8)>'s structured logging
 capabilities and includes location of the logging point in the source code in 
 the messages.
 
+Backends for L<Log::Dispatch> and L<Log::Log4perl> exist: Use
+L<Log::Dispatch::Journald> and L<Log::Log4perl::Appender::Journald>
+respectively.
+
 =cut
 
 package Log::Journald;
@@ -40,7 +44,7 @@ use warnings;
 
 require Exporter;
 
-our $VERSION = '0.10';
+our $VERSION = '0.20';
 our @ISA = qw/Exporter/;
 our @EXPORT_OK = qw/journal_log send sendv/;
 our @EXPORT = qw/journal_log send sendv/;
@@ -89,11 +93,19 @@ macros.
  
 =item *
 
-L<sd-journal(3)> - Description of C language API for journal.
+L<sd-journal(3)> -- Description of C language API for journal.
 
 =item *
 
 L<systemd-journald.service(8)> -- Manual of the journal service.
+
+=item *
+
+L<Log::Dispatch::Journald> -- L<Log::Dispatch> backend.
+
+=item *
+
+L<Log::Log4perl::Appender::Journald> -- L<Log::Log4perl> appender.
 
 =back
 
